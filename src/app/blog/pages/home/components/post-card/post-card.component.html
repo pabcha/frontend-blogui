@@ -1,6 +1,8 @@
 <div class="post-card">
-  <img class="post-card__cover" src="assets/img/concept-of-product-release-and-launch-for-public-1580174-0.svg" alt="">
-  <a href="/article.html">
+  <a [routerLink]="['/', post.slug]">
+    <img class="post-card__cover" src="assets/img/concept-of-product-release-and-launch-for-public-1580174-0.svg" alt="">
+  </a>
+  <a [routerLink]="['/', post.slug]">
     <h1 class="post-card__title">{{ post.title }}</h1>
   </a>
   <span class="txt-sm txt-secondary mr-2">50m ago</span>

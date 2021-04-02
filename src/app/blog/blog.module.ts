@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostCardComponent } from './pages/home/components/post-card/post-card.component';
 import { PostListComponent } from './pages/home/components/post-list/post-list.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PostListComponent } from './pages/home/components/post-list/post-list.c
     HeaderComponent,
     FooterComponent,
     PostListComponent,
-    PostCardComponent
+    PostCardComponent,
+    ArticleComponent
   ],
   imports: [
     CommonModule,

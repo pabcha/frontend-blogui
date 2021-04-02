@@ -1,0 +1,36 @@
+.post__header {
+  display: flex;
+  justify-content: space-between;
+}
+.post__cover {
+  height: 170px;
+  border-radius: 1rem;
+  border: 1px solid #ededed;
+  object-fit: cover;
+}
+.post__title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+.post p {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 326px) {
+  .post__cover {
+    height: 210px;
+  }
+}
+@media only screen and (min-width: 426px) {
+  .post {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .post__cover {
+    height: 310px;
+    object-fit: cover;
+    object-position: 10px -120px;
+  }
+}
