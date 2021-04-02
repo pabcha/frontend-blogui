@@ -57,6 +57,81 @@ ul {
   color: var(--color-concrete);
 }
 
+/*******/
+.form-group {
+  margin-bottom: 1.5em;
+}
+.form-group label {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: .5em;
+}
+.form-input {
+  color: #222;
+  padding: .6em .7em;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #bbc0c4;
+  font-size: 1em;
+  /* font-size: .9em; */
+}
+.form-input:focus {
+  border-color: rgba(255, 105, 28, 0.4);
+  box-shadow: 0 0 0 4px rgba(255, 105, 28, 0.1);
+  outline: 0;
+}
+.btn-login {
+  font-size: 1em;
+  width: 100%;
+  padding: .8em .7em;
+  outline: none;
+  border: 0;
+  border-radius: .5em;
+  background-color: var(--color-primary);
+  color: var(--font-white);
+  cursor: pointer;
+}
+.btn-login:focus {
+  box-shadow: 0 0 0 4px rgba(255, 105, 28, 0.2);
+}
+.form-radio {}
+.form-radio label {
+  font-weight: normal;
+  font-size: .9em;
+}
+.form-radio-group {
+  display: inline-block;
+  margin-right: .5em;
+}
+
+
+.error input {
+  border-color: var(--color-red)
+}
+.error p {
+  font-size: .8em;
+  margin-top: .5em;
+  margin-left: .5em;
+  color: var(--color-red);
+  font-weight: 500;
+}
+
+.btn-delete {
+  background-color: #ededed;
+  color: var(--color-red);
+  font-weight: 6  00;
+}
+/*******/
+
 .container {
   padding: 0 1em;
+}
+
+@media only screen and (min-width: 1240px) {
+  .container {
+    max-width: 1240px;
+    padding: 0;
+    margin: 0 auto;
+  }
 }
