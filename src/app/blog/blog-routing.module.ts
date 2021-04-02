@@ -15,7 +15,7 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: ':slug',
+        path: 'post/:slug',
         component: ArticleComponent
       }
     ]
