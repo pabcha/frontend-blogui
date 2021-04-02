@@ -1,1 +1,37 @@
-<p>signin works!</p>
+<section class="container">
+  <main class="auth-section">
+    <div class="auth-cover"></div>
+    <div class="auth-form-section">
+      <div class="error-section" *ngIf="error">
+        <div class="container">
+          <h2>
+            We couldn’t find an account matching the username and password you entered. Please check your username and password and try again.
+          </h2>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="auth-header">
+          <h1>Sign in to our Site</h1>
+        </div>
+        <div class="auth-form">
+          <form (submit)="onSubmit()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-input" name="username" id="username">
+              <!-- <p>username is required</p> -->
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-input" name="password" id="password">
+              <!-- <p>password is required</p> -->
+            </div>
+            <button class="btn-login" type="submit">Sign in</button>
+            <div class="mt-1">
+              <a routerLink="/">Go back Home</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

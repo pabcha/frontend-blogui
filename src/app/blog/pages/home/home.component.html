@@ -1,5 +1,13 @@
-<h2>Posts lists</h2>
-<ul>
-  <li *ngFor="let post of posts">{{ post.slug }}</li>
-</ul>
+<main>
+  <div class="category-list">
+    <div class="category active">All topics</div>
+    <div class="category">Technology</div>
+    <div class="category">Design</div>
+    <div class="category">Business</div>
+    <div class="category">Marketing</div>
+    <div class="category">Social</div>
+  </div>
+
+  <app-post-list [posts]="posts" *ngIf="posts"></app-post-list>
+</main>
 
