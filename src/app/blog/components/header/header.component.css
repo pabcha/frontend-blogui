@@ -1,0 +1,28 @@
+.site-header {
+  padding: .5em 0em;
+  margin-bottom: 1.5em;
+  box-shadow: inset 0px -1px 0px #f3f3f4;
+}
+.site-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-menu-btn img {
+  width: 35px;
+  border: 1px solid #ededed;
+  border-radius: 4px;
+}
+.site-nav ul li > a {
+  border: 0;
+  outline: none;
+  padding: .6em .8em;
+  display: inline-block;
+  text-align: center;
+  font-size: .9em;
+  border-radius: 5px;
+  font-weight: 500;
+  min-width: 60px;
+  background-color: var(--color-primary);
+  color: var(--font-white);
+}
