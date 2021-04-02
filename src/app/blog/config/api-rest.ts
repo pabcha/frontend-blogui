@@ -1,1 +1,3 @@
-export const GET_POSTS_URL ='http://localhost:5000/api/posts';
+import { environment } from './../../../environments/environment';
+
+export const GET_POSTS_URL = `${environment.apiURL}/api/posts`;
