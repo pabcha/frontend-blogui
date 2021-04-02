@@ -32,6 +32,31 @@ ul {
   margin: 0;
 }
 
+.badge {
+  display: inline-block;
+  padding: .1em .6em;
+  border-radius: .3em;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: 500;
+  color: var(--font-white);
+  background-color: var(--color-primary);
+}
+.bg-violet { background-color: var(--color-violet); }
+.bg-yellow { background-color: var(--color-yellow); color: black; }
+.mr-1 { margin-right: .5em; }
+.mr-2 { margin-right: 1em; }
+.mb-1 { margin-bottom: .5em; }
+.mb-2 { margin-bottom: 1em; }
+.mt-1 { margin-top: .5em; }
+.txt-sm {
+  font-size: .8em;
+  font-weight: 400;
+}
+.txt-secondary {
+  color: var(--color-concrete);
+}
+
 .container {
   padding: 0 1em;
 }
