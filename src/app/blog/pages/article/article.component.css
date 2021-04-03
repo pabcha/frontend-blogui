@@ -18,6 +18,12 @@
   font-size: 14px;
 }
 
+a {
+  color: #232323;
+  font-size: .9em;
+  font-weight: 500;
+}
+
 @media only screen and (min-width: 326px) {
   .post__cover {
     height: 210px;
@@ -30,7 +36,5 @@
   }
   .post__cover {
     height: 310px;
-    object-fit: cover;
-    object-position: 10px -120px;
   }
 }
