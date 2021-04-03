@@ -1,6 +1,6 @@
 <div class="post-card">
   <a [routerLink]="['/post', post.slug]">
-    <img class="post-card__cover" src="assets/img/concept-of-product-release-and-launch-for-public-1580174-0.svg" alt="">
+    <img class="post-card__cover" [src]="'assets/img/' + post.cover" [alt]="post.title">
   </a>
   <a [routerLink]="['/post', post.slug]">
     <h1 class="post-card__title">{{ post.title }}</h1>
