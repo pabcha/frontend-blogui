@@ -1,26 +1,13 @@
-<div class="post">
-  <div class="post__header mb-2">
-    <span class="badge">business</span>
-    <span class="txt-sm txt-secondary mr-2">50m ago</span>
+<div class="post" *ngIf="post">
+  <a routerLink="/">Go Back</a>
+  <div class="post__header mb-2 mt-1">
+    <span class="badge">{{ post.category }}</span>
+    <span class="txt-sm txt-secondary mr-2">{{ post.createdAt | date: "mediumDate" }}</span>
   </div>
-  <img class="post__cover" src="assets/img/concept-of-product-release-and-launch-for-public-1580174-0.svg" alt="">
-  <h3 class="post__title">How to run a More Effective Meeting</h3>
+  <img class="post__cover" [src]="'assets/img/' + post.cover" [alt]="post.title">
+  <h3 class="post__title">{{ post.title }}</h3>
   <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum eius,
-    ullam incidunt quidem distinctio animi optio ipsa omnis vel iure eligendi
-    debitis eos deleniti, eum voluptas cum. Nulla, architecto et.
-  </p>
-  <br/>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum eius,
-    ullam incidunt quidem distinctio animi optio ipsa omnis vel iure eligendi
-    debitis eos deleniti, eum voluptas cum. Nulla, architecto et.
-  </p>
-  <br/>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum eius,
-    ullam incidunt quidem distinctio animi optio ipsa omnis vel iure eligendi
-    debitis eos deleniti, eum voluptas cum. Nulla, architecto et.
+    {{ post.body }}
   </p>
 </div>
 

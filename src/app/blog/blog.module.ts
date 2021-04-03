@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PostCardComponent } from './pages/home/components/post-card/post-card.component';
 import { PostListComponent } from './pages/home/components/post-list/post-list.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { CategoriesNavComponent } from './pages/home/components/categories-nav/categories-nav.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ArticleComponent } from './pages/article/article.component';
     FooterComponent,
     PostListComponent,
     PostCardComponent,
-    ArticleComponent
+    ArticleComponent,
+    CategoriesNavComponent
   ],
   imports: [
     CommonModule,
