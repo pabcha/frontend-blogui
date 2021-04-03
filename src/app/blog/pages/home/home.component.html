@@ -1,5 +1,8 @@
-<h2>Posts lists</h2>
-<ul>
-  <li *ngFor="let post of posts">{{ post.slug }}</li>
-</ul>
+<main>
+  <app-categories-nav
+    [categories]="categories"
+    (onSelect)="handleSelect($event)"
+    *ngIf="categories"></app-categories-nav>
+  <app-post-list [posts]="posts" *ngIf="posts"></app-post-list>
+</main>
 

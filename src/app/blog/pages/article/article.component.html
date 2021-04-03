@@ -1,0 +1,13 @@
+<div class="post" *ngIf="post">
+  <a routerLink="/">Go Back</a>
+  <div class="post__header mb-2 mt-1">
+    <span class="badge">{{ post.category }}</span>
+    <span class="txt-sm txt-secondary mr-2">{{ post.createdAt | date: "mediumDate" }}</span>
+  </div>
+  <img class="post__cover" [src]="'assets/img/' + post.cover" [alt]="post.title">
+  <h3 class="post__title">{{ post.title }}</h3>
+  <p>
+    {{ post.body }}
+  </p>
+</div>
+

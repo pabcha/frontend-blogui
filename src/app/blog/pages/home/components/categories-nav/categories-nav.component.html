@@ -1,0 +1,17 @@
+<div class="category-list">
+  <div
+    class="category"
+    (click)="setCategory(default)"
+    [ngClass]="{ active: isSelected(default) }"
+  >
+    All Topics
+  </div>
+  <div
+    class="category"
+    *ngFor="let cat of categories"
+    (click)="setCategory(cat.category)"
+    [ngClass]="{ active: isSelected(cat.category) }"
+  >
+    {{ cat.category }}
+  </div>
+</div>
