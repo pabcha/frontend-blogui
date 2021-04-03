@@ -1,3 +1,6 @@
+.post {
+  margin-bottom: 3em;
+}
 .post__header {
   display: flex;
   justify-content: space-between;
@@ -9,13 +12,13 @@
   object-fit: cover;
 }
 .post__title {
-  font-size: 1.2em;
+  font-size: 1.7em;
   font-weight: 700;
   margin-top: .5em;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 .post p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
@@ -33,7 +36,13 @@ a {
   .post {
     max-width: 620px;
     margin: 0 auto;
+    margin-bottom: 3em;
   }
+
+  .post p {
+    font-size: 20px;
+  }
+
   .post__cover {
     height: 310px;
   }
