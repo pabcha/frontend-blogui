@@ -38,4 +38,11 @@ export class PostsService {
         map((response) => response.data)
       );
   }
+
+  loadPostsByCategory(category): Observable<Post[]> {
+    return this._http.get<PostsResponse>(`${GET_POSTS_URL}?category=${category}`)
+      .pipe(
+        map((response) => response.data)
+      );
+  }
 }

@@ -12,6 +12,7 @@ import { Category } from '../../../interfaces/category';
 export class HomeComponent implements OnInit {
   posts: Post[];
   categories: Category[];
+  isRequesting: boolean;
 
   constructor(
     private _postsService: PostsService,
@@ -26,5 +27,20 @@ export class HomeComponent implements OnInit {
     this._categoryService
       .loadCategories()
       .subscribe((categories) => this.categories = categories);
+  }
+
+  handleSelect(category) {
+    if (this.isRequesting) {
+      return;
+    }
+
+    this.isRequesting = true;
+
+    this._postsService
+      .loadPostsByCategory(category)
+      .subscribe((posts) => {
+        this.posts = posts;
+        this.isRequesting = false;
+      });
   }
 }

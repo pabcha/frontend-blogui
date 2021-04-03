@@ -1,9 +1,8 @@
 <main>
-  <div class="category-list">
-    <div class="category active">All topics</div>
-    <div class="category" *ngFor="let cat of categories">{{ cat.category }}</div>
-  </div>
-
+  <app-categories-nav
+    [categories]="categories"
+    (onSelect)="handleSelect($event)"
+    *ngIf="categories"></app-categories-nav>
   <app-post-list [posts]="posts" *ngIf="posts"></app-post-list>
 </main>
 

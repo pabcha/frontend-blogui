@@ -5,6 +5,6 @@
   <a [routerLink]="['/post', post.slug]">
     <h1 class="post-card__title">{{ post.title }}</h1>
   </a>
-  <span class="txt-sm txt-secondary mr-2">50m ago</span>
+  <span class="txt-sm txt-secondary mr-2">{{ post.createdAt | date: "mediumDate" }}</span>
   <span class="badge">{{ post.category }}</span>
 </div>
