@@ -23,7 +23,7 @@ export class AuthService {
     private _http: HttpClient,
     private _router: Router
   ) {
-    this.isAuthenticated$ = (localStorage.getItem('token')) ?
+    this.isAuthenticated$ = (this.token) ?
       new BehaviorSubject<boolean>(true) : new BehaviorSubject<boolean>(false);
   }
 
@@ -38,5 +38,9 @@ export class AuthService {
     localStorage.removeItem('token');
     this.isAuthenticated$.next(false);
     this._router.navigateByUrl('/home');
+  }
+
+  get token() {
+    return localStorage.getItem('token');
   }
 }
