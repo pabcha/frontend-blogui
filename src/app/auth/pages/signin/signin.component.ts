@@ -27,6 +27,7 @@ export class SigninComponent {
         (user: User) => {
           localStorage.setItem('token', user.token);
           form.resetForm();
+          this._authService.isAuthenticated$.next(true);
           this._router.navigateByUrl('/panel');
         },
         ({ error }) => {

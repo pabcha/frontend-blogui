@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { POST_LOGIN_URL } from './api-rest';
@@ -16,8 +16,12 @@ type AuthResponse = {
   providedIn: 'root'
 })
 export class AuthService {
+  isAuthenticated$: BehaviorSubject<boolean>;
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) {
+    this.isAuthenticated$ = (localStorage.getItem('token')) ?
+      new BehaviorSubject<boolean>(true) : new BehaviorSubject<boolean>(false);
+  }
 
   login(username, password): Observable<User> {
     return this._http.post<AuthResponse>(POST_LOGIN_URL, { username, password })
