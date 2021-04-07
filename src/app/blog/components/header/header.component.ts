@@ -15,4 +15,8 @@ export class HeaderComponent {
       .subscribe(isAuth => this.isAuthenticated = isAuth);
   }
 
+  logout() {
+    this._authService.logout();
+  }
+
 }

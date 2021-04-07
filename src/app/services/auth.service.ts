@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -18,7 +19,10 @@ type AuthResponse = {
 export class AuthService {
   isAuthenticated$: BehaviorSubject<boolean>;
 
-  constructor(private _http: HttpClient) {
+  constructor(
+    private _http: HttpClient,
+    private _router: Router
+  ) {
     this.isAuthenticated$ = (localStorage.getItem('token')) ?
       new BehaviorSubject<boolean>(true) : new BehaviorSubject<boolean>(false);
   }
@@ -28,5 +32,11 @@ export class AuthService {
       .pipe(
         map((response) => response.data)
       );
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.isAuthenticated$.next(false);
+    this._router.navigateByUrl('/home');
   }
 }
