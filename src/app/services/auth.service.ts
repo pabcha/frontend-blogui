@@ -36,11 +36,27 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('blogui-username');
+    localStorage.removeItem('blogui-role');
     this.isAuthenticated$.next(false);
     this._router.navigateByUrl('/home');
   }
 
+  setUser({ username, role, token }) {
+    localStorage.setItem('token', token);
+    localStorage.setItem('blogui-username', username);
+    localStorage.setItem('blogui-role', role);
+  }
+
   get token() {
     return localStorage.getItem('token');
+  }
+
+  get username() {
+    return localStorage.getItem('blogui-username');
+  }
+
+  get userRole() {
+    return localStorage.getItem('blogui-role');
   }
 }
