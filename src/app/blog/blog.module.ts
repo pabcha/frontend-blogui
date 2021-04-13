@@ -10,6 +10,8 @@ import { PostListComponent } from './pages/home/components/post-list/post-list.c
 import { ArticleComponent } from './pages/article/article.component';
 import { CategoriesNavComponent } from './pages/home/components/categories-nav/categories-nav.component';
 import { PanelComponent } from './pages/panel/panel.component';
+import { PostInlineListComponent } from './pages/panel/components/post-inline-list/post-inline-list.component';
+import { PostInlineCardComponent } from './pages/panel/components/post-inline-card/post-inline-card.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PanelComponent } from './pages/panel/panel.component';
     PostCardComponent,
     ArticleComponent,
     CategoriesNavComponent,
-    PanelComponent
+    PanelComponent,
+    PostInlineListComponent,
+    PostInlineCardComponent
   ],
   imports: [
     CommonModule,

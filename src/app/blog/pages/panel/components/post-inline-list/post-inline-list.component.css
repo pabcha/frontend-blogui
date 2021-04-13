@@ -1,0 +1,19 @@
+.posts {
+  margin: 3em 0em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1em;
+}
+
+@media only screen and (min-width: 650px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1em;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

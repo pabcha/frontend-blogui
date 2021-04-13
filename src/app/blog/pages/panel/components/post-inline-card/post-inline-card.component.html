@@ -1,0 +1,15 @@
+<div class="post-card-inline">
+  <div class="post-card-inline__cover-section">
+    <img [src]="'assets/img/' + post.cover" />
+  </div>
+  <div class="post-card-inline__main">
+    <div class="post-card-inline__top">
+      <span class="badge bg-yellow">{{ post.category }}</span>
+      <a class="txt-sm txt-secondary mr-2" style="margin-left: auto;" href="view.html">view</a>
+      <a class="txt-sm txt-secondary mr-2" href="#" *ngIf="post.status === 'draft'">publish</a>
+    </div>
+    <h2 class="mt-1 mb-1">{{ post.title }}</h2>
+    <span class="txt-sm txt-secondary mr-2">{{ post.createdAt | date: "mediumDate" }}</span>
+    <span class="txt-sm txt-secondary mr-1">{{ post.username }}</span>
+  </div>
+</div>
