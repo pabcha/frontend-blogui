@@ -1,10 +1,11 @@
+import { AuthService } from './../../services/auth.service';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Post } from '../../interfaces/post';
-import { GET_POSTS_URL, GET_POST_URL } from './api-rest';
+import { GET_POSTS_URL, GET_POST_URL, POST_POSTS_URL } from './api-rest';
 
 type PostsResponse = {
   success: boolean,
@@ -18,12 +19,29 @@ type PostResponse = {
   error: string
 }
 
+type PostStoreResponse = {
+  success: boolean,
+  data: Post,
+  error: string
+}
+
+type storePost = {
+  category_id: string,
+  title: string,
+  slug: string,
+  body: string,
+  status: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class PostsService {
 
-  constructor(private _http: HttpClient) {}
+  constructor(
+    private _http: HttpClient,
+    private _authService: AuthService
+  ) {}
 
   loadPosts(): Observable<Post[]> {
     return this._http.get<PostsResponse>(GET_POSTS_URL)
@@ -44,5 +62,10 @@ export class PostsService {
       .pipe(
         map((response) => response.data)
       );
+  }
+
+  storePost(post: storePost) {
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${this._authService.token}`});
+    return this._http.post<PostStoreResponse>(`${POST_POSTS_URL}`, post, { headers });
   }
 }

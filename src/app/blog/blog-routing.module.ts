@@ -6,6 +6,7 @@ import { BlogComponent } from './blog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { PanelComponent } from './pages/panel/panel.component';
+import { NewPostComponent } from './pages/new-post/new-post.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
       {
         path: 'panel',
         component: PanelComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'panel/posts/new',
+        component: NewPostComponent,
         canActivate: [AuthGuard]
       },
     ]
