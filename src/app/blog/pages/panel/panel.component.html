@@ -1,6 +1,18 @@
 <div class="panel-options">
-  <div class="option active">Published</div>
-  <div class="option">Draft</div>
+  <div
+    class="option"
+    [ngClass]="{ active: isOptionSelected('published') }"
+    (click)="showPosts('published')"
+  >
+    Published
+  </div>
+  <div
+    class="option"
+    [ngClass]="{ active: isOptionSelected('draft') }"
+    (click)="showPosts('draft')"
+  >
+    Draft
+  </div>
   <div class="option add-new">
     <a href="new-post.html">+</a>
   </div>

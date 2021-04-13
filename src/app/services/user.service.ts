@@ -24,13 +24,14 @@ export class UserService {
     private _authService: AuthService
   ) {}
 
-  loadMyPosts(): Observable<Post[]> {
+  loadMyPosts(status = 'published'): Observable<Post[]> {
     const username = this._authService.username;
     if (!username) return;
 
     const URL = getUserPostsUrl(username);
+    const query = `?status=${status}`;
 
-    return this._http.get<UserPostsResponse>(URL)
+    return this._http.get<UserPostsResponse>(URL + query)
       .pipe(
         map((response) => response.data)
       );

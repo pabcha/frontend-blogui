@@ -9,11 +9,22 @@ import { UserService } from './../../../services/user.service';
 })
 export class PanelComponent {
   posts: Post[];
+  selectedOption = 'published';
 
   constructor(private _userService: UserService) {}
 
   ngOnInit() {
     this._userService.loadMyPosts()
       .subscribe(myposts => this.posts = myposts);
+  }
+
+  showPosts(status) {
+    this.selectedOption = status;
+    this._userService.loadMyPosts(status)
+      .subscribe(myposts => this.posts = myposts);
+  }
+
+  isOptionSelected(option) {
+    return this.selectedOption === option;
   }
 }
