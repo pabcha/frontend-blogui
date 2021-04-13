@@ -30,11 +30,24 @@
   background-color: #232323;
   color: white;
 }
-.option.add-new {
+.option.add-new,
+.option.add-new-large {
   margin-left: auto;
   width: auto;
   background-color: var(--color-primary);
   color: white;
   min-width: 40px;
 }
+.option.add-new-large {
+  display: none;
+  border-radius: 6px;
+}
 
+@media only screen and (min-width: 650px) {
+  .option.add-new {
+    display: none;
+  }
+  .option.add-new-large {
+    display: block;
+  }
+}
