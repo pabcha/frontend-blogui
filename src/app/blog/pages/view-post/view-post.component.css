@@ -1,0 +1,56 @@
+.edit-post-section {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.edit-post-header {
+  margin-bottom: 2em;
+}
+.edit-post-header h1 {
+  font-size: 1.6em;
+}
+
+.edit-post-form {
+  margin-bottom: 6em;
+}
+.edit-post-form a {
+  color: var(--color-primary);
+  font-size: .8em;
+  font-weight: 500;
+}
+
+.textarea {
+  font-size: .9em;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ededed;
+  border: 0;
+  resize: none;
+  font-weight: 500;
+  color: #646c77;
+}
+
+.input-view {
+  font-family: 'Roboto', sans-serif;
+  font-size: .9em;
+  font-weight: 500;
+  color: #646c77;
+  background-color: #ededed;
+  border: 0;
+}
+.input-view:focus {
+  background-color: #fff;
+  border: 1px solid rgba(255, 105, 28, 0.5);
+  box-shadow: 0 0 0 4px rgba(255, 105, 28, 0.1);
+  color: #000;
+  font-weight: 400;
+}
+
+.textarea:focus {
+  background-color: #fff;
+  border: 1px solid rgba(255, 105, 28, 0.4);
+  box-shadow: 0 0 0 4px rgba(255, 105, 28, 0.1);
+  outline: 0;
+  color: #000;
+  font-weight: 400;
+}

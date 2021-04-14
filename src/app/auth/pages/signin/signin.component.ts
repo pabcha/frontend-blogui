@@ -25,7 +25,7 @@ export class SigninComponent {
       .login(this.username, this.password)
       .subscribe(
         (user: User) => {
-          localStorage.setItem('token', user.token);
+          this._authService.setUser(user);
           form.resetForm();
           this._authService.isAuthenticated$.next(true);
           this._router.navigateByUrl('/panel');

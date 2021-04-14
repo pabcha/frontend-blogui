@@ -1,0 +1,106 @@
+<main class="edit-post-section">
+  <div class="mb-2">
+    <app-alert>This feature is temporary disabled.</app-alert>
+  </div>
+
+  <div class="edit-post-header">
+    <h1>Edit Post</h1>
+  </div>
+
+  <div class="edit-post-form" *ngIf="post">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-input input-view"
+          id="title"
+          name="title"
+          [(ngModel)]="post.title"
+          #titleField="ngModel"
+          [ngClass]="{ 'error-field': titleField.invalid && titleField.touched }"
+          required
+        />
+        <p class="error" *ngIf="titleField.invalid && titleField.touched">the title is required</p>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select
+          class="form-input input-view"
+          id="category"
+          name="category"
+        >
+          <option
+            *ngFor="let cat of categories"
+            [value]="cat.id"
+            [selected]="(post.category === cat.category) ? true : false"
+          >
+            {{ cat.category }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="slug">Slug</label>
+        <input
+          type="text"
+          class="form-input input-view"
+          id="slug"
+          name="slug"
+          [(ngModel)]="post.slug"
+          #slugField="ngModel"
+          [ngClass]="{ 'error-field': slugField.invalid && slugField.touched }"
+          required
+        />
+        <p class="error" *ngIf="slugField.invalid && slugField.touched">the slug is required</p>
+      </div>
+      <div class="form-group">
+        <label for="cover">Cover</label>
+        <input type="file" class="form-input input-view" name="cover" id="cover" />
+      </div>
+      <div class="form-group">
+        <label for="body">Content</label>
+        <textarea
+          name="body"
+          class="form-input textarea"
+          id="body"
+          rows="10"
+          [(ngModel)]="post.body"
+          #bodyField="ngModel"
+          [ngClass]="{ 'error-field': bodyField.invalid && bodyField.touched }"
+          required
+        ></textarea>
+        <p class="error" *ngIf="bodyField.invalid && bodyField.touched">the content is required</p>
+      </div>
+      <div class="form-group">
+        <label for="body">Status</label>
+        <div class="form-radio">
+          <div class="form-radio-group">
+            <label for="published">Published</label>
+            <input
+              type="radio"
+              name="status"
+              id="published"
+              value="published"
+              [(ngModel)]="post.status"
+            />
+          </div>
+          <div class="form-radio-group">
+            <label for="draft">Draft</label>
+            <input
+              type="radio"
+              name="status"
+              id="draft"
+              value="draft"
+              [(ngModel)]="post.status"
+            />
+          </div>
+        </div>
+      </div>
+      <button class="btn-login mb-1" type="submit" [disabled]="true">Update your Post</button>
+      <button class="btn-login btn-delete" type="button" (click)="deletePost()">Delete</button>
+      <div class="mt-1">
+        <a [routerLink]="['/panel']" [queryParams]="{section: section}">Go back</a>
+      </div>
+    </form>
+  </div>
+</main>

@@ -1,40 +1,28 @@
+<div class="welcome">
+  <h1>Welcome, {{ username | titlecase }}</h1>
+</div>
+
 <div class="panel-options">
-  <div class="option active">Published</div>
-  <div class="option">Draft</div>
+  <div
+    class="option"
+    [ngClass]="{ active: isOptionSelected('published') }"
+    (click)="showPosts('published')"
+  >
+    Published
+  </div>
+  <div
+    class="option"
+    [ngClass]="{ active: isOptionSelected('draft') }"
+    (click)="showPosts('draft')"
+  >
+    Draft
+  </div>
   <div class="option add-new">
-    <a href="new-post.html">+</a>
+    <a routerLink="/panel/posts/new">+</a>
+  </div>
+  <div class="option add-new-large">
+    <a routerLink="/panel/posts/new">Add New Post</a>
   </div>
 </div>
 
-<div class="posts">
-  <div class="post-card-inline">
-    <div class="post-card-inline__cover-section">
-      <img src="assets/img/blogs-9-pasos-faciles.png" />
-    </div>
-    <div class="post-card-inline__main">
-      <div class="post-card-inline__top">
-        <span class="badge bg-yellow">design</span>
-        <a class="txt-sm txt-secondary mr-2" style="margin-left: auto;" href="view.html">view</a>
-        <a class="txt-sm txt-secondary mr-2" href="#">publish</a>
-      </div>
-      <h2 class="mt-1 mb-1">Top 10 techniques to get rid of clutters in design system</h2>
-      <span class="txt-sm txt-secondary mr-2">50m ago</span>
-      <span class="txt-sm txt-secondary mr-1">Recruiter</span>
-    </div>
-  </div>
-  <div class="post-card-inline">
-    <div class="post-card-inline__cover-section">
-      <img src="assets/img/blogs-9-pasos-faciles.png" />
-    </div>
-    <div class="post-card-inline__main">
-      <div class="post-card-inline__top">
-        <span class="badge bg-yellow">design</span>
-        <a class="txt-sm txt-secondary mr-2" style="margin-left: auto;" href="view.html">view</a>
-        <a class="txt-sm txt-secondary mr-2" href="#">publish</a>
-      </div>
-      <h2 class="mt-1 mb-1">Top 10 techniques to get rid of clutters in design system</h2>
-      <span class="txt-sm txt-secondary mr-2">50m ago</span>
-      <span class="txt-sm txt-secondary mr-1">Recruiter</span>
-    </div>
-  </div>
-</div>
+<app-post-inline-list [posts]="posts" *ngIf="posts"></app-post-inline-list>
