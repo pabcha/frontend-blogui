@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from './../../../services/auth.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { AuthService } from './../../../services/auth.service';
 })
 export class HeaderComponent {
   isAuthenticated = false;
-  constructor(private _authService: AuthService) {}
+  constructor(
+    private _authService: AuthService,
+    private _router: Router
+  ) {}
 
   ngOnInit() {
     this._authService.isAuthenticated$
@@ -17,6 +21,10 @@ export class HeaderComponent {
 
   logout() {
     this._authService.logout();
+  }
+
+  goHome() {
+    this._router.navigateByUrl('/');
   }
 
 }
