@@ -99,7 +99,7 @@
       <button class="btn-login mb-1" type="submit" [disabled]="true">Update your Post</button>
       <button class="btn-login btn-delete" type="button" (click)="deletePost()">Delete</button>
       <div class="mt-1">
-        <a routerLink="/panel">Go back</a>
+        <a [routerLink]="['/panel']" [queryParams]="{section: section}">Go back</a>
       </div>
     </form>
   </div>

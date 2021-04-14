@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Post } from 'src/app/interfaces/post';
 import { UserService } from './../../../services/user.service';
@@ -9,19 +10,28 @@ import { UserService } from './../../../services/user.service';
 })
 export class PanelComponent {
   posts: Post[];
-  selectedOption = 'published';
+  selectedOption;
 
-  constructor(private _userService: UserService) {}
+  constructor(
+    private _userService: UserService,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
   ngOnInit() {
-    this._userService.loadMyPosts()
-      .subscribe(myposts => this.posts = myposts);
+    this._activatedRoute.queryParams
+      .subscribe((params) => {
+        const status = params.section || 'published';
+        this.selectedOption = status;
+
+        this._userService.loadMyPosts(status)
+          .subscribe(myposts => this.posts = myposts);
+      })
   }
 
   showPosts(status) {
     this.selectedOption = status;
-    this._userService.loadMyPosts(status)
-      .subscribe(myposts => this.posts = myposts);
+    this._router.navigate(['/panel'], { queryParams: {section: status} });
   }
 
   isOptionSelected(option) {

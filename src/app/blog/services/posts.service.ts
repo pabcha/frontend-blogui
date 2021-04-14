@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Post } from '../../interfaces/post';
+import { getUsersPostUrl } from './../../services/api-rest';
 import { GET_POSTS_URL, GET_POST_URL, POST_POSTS_URL } from './api-rest';
 
 type PostsResponse = {
@@ -67,5 +68,12 @@ export class PostsService {
   storePost(post: storePost) {
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${this._authService.token}`});
     return this._http.post<PostStoreResponse>(`${POST_POSTS_URL}`, post, { headers });
+  }
+
+  deletePost(slug) {
+    const username = this._authService.username;
+    const URL = getUsersPostUrl(username, slug);
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${this._authService.token}`});
+    return this._http.delete(URL, { headers });
   }
 }
