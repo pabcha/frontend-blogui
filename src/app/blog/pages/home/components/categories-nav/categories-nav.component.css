@@ -1,9 +1,16 @@
 .category-list {
   display: flex;
   overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-x: scroll;
   width: 100%;
   margin-bottom: 1.6em;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+}
+.category-list::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  -webkit-appearance: none;
+  display: none;
 }
 .category {
   background: #f5f5f5;

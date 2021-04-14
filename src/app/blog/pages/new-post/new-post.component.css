@@ -1,0 +1,29 @@
+.new-post-section {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.new-post-header {
+  margin-bottom: 2em;
+}
+.new-post-header h1 {
+  font-size: 1.6em;
+}
+
+.new-post-form {
+  margin-bottom: 6em;
+}
+.new-post-form a {
+  color: var(--color-primary);
+  font-size: .8em;
+  font-weight: 500;
+}
+
+.error-section {
+  padding: .8em 0em;
+  color: white;
+  background-color: var(--color-red);
+  text-align: center;
+  margin-bottom: 2em;
+}

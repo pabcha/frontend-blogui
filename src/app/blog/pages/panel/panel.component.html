@@ -1,0 +1,28 @@
+<div class="welcome">
+  <h1>Welcome, {{ username | titlecase }}</h1>
+</div>
+
+<div class="panel-options">
+  <div
+    class="option"
+    [ngClass]="{ active: isOptionSelected('published') }"
+    (click)="showPosts('published')"
+  >
+    Published
+  </div>
+  <div
+    class="option"
+    [ngClass]="{ active: isOptionSelected('draft') }"
+    (click)="showPosts('draft')"
+  >
+    Draft
+  </div>
+  <div class="option add-new">
+    <a routerLink="/panel/posts/new">+</a>
+  </div>
+  <div class="option add-new-large">
+    <a routerLink="/panel/posts/new">Add New Post</a>
+  </div>
+</div>
+
+<app-post-inline-list [posts]="posts" *ngIf="posts"></app-post-inline-list>
