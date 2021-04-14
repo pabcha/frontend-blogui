@@ -1,3 +1,4 @@
+import { CoreModule } from './../core/core.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -15,6 +16,7 @@ import { PanelComponent } from './pages/panel/panel.component';
 import { PostInlineListComponent } from './pages/panel/components/post-inline-list/post-inline-list.component';
 import { PostInlineCardComponent } from './pages/panel/components/post-inline-card/post-inline-card.component';
 import { NewPostComponent } from './pages/new-post/new-post.component';
+import { ViewPostComponent } from './pages/view-post/view-post.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { NewPostComponent } from './pages/new-post/new-post.component';
     PanelComponent,
     PostInlineListComponent,
     PostInlineCardComponent,
-    NewPostComponent
+    NewPostComponent,
+    ViewPostComponent,
   ],
   imports: [
     CommonModule,
     BlogRoutingModule,
     FormsModule,
+    CoreModule
   ]
 })
 export class BlogModule {}

@@ -5,7 +5,7 @@
   <div class="post-card-inline__main">
     <div class="post-card-inline__top">
       <span class="badge bg-yellow">{{ post.category }}</span>
-      <a class="txt-sm txt-secondary mr-2" style="margin-left: auto;" href="view.html">view</a>
+      <a class="txt-sm txt-secondary mr-2" style="margin-left: auto;" [routerLink]="['/panel/posts/view', post.slug]">view</a>
       <a class="txt-sm txt-secondary mr-2" href="#" *ngIf="post.status === 'draft'">publish</a>
     </div>
     <h2 class="mt-1 mb-1">{{ post.title }}</h2>
